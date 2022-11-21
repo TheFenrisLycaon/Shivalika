@@ -1,5 +1,6 @@
 from shivalika.enumerations import InputMode
 import json
+
 ROOT_LOG_CONF = {
     "version": 1,
     "root": {
@@ -9,7 +10,7 @@ ROOT_LOG_CONF = {
     "handlers": {
         "file": {
             "class": "logging.handlers.RotatingFileHandler",
-            "level": "ERROR",
+            "level": "DEBUG",
             "formatter": "detailed",
             "filename": "./logs/shivalika.log",
             "mode": "a",
@@ -44,7 +45,7 @@ Keys Description:
 
 DEFAULT_GENERAL_SETTINGS = {
     "assistant_name": "shivalika",
-    "input_mode": InputMode.TEXT.value,
+    "input_mode": InputMode.VOICE.value,
     "response_in_speech": True,
 }
 
@@ -60,7 +61,7 @@ SKILL_ANALYZER = {
 }
 
 
-with open( "./shivalika/SECRECTS.json", "r") as f:
+with open("./shivalika/SECRECTS.json", "r") as f:
     KEYS = json.load(f)
 
 """
